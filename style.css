@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+
+:root {
+	--red: #a62935;
+	--deep-red: #741e2b;
+	--rose: #e8a4a7;
+	--blush: #f7e7e1;
+	--cream: #fffaf5;
+	--ink: #342127;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+	margin: 0;
+	color: var(--ink);
+	background: var(--cream);
+	font-family: 'DM Sans', sans-serif;
+}
+
+.page-shell { overflow: hidden; }
+
+.topbar, main, footer { max-width: 1180px; margin: 0 auto; padding-left: 6vw; padding-right: 6vw; }
+
+.topbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.brand { display: flex; gap: 10px; align-items: center; color: var(--deep-red); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+.brand-mark { display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid var(--rose); border-radius: 50%; font-size: 17px; }
+.date-label { color: #9f7b7e; font-size: 10px; font-weight: 700; letter-spacing: .18em; }
+
+.hero-section { display: grid; grid-template-columns: 1fr .88fr; align-items: center; gap: 9%; min-height: 610px; padding-top: 35px; padding-bottom: 105px; }
+.eyebrow { display: flex; align-items: center; gap: 11px; margin: 0 0 24px; color: var(--red); font-size: 10px; font-weight: 700; letter-spacing: .21em; text-transform: uppercase; }
+.eyebrow span { width: 27px; height: 1px; background: currentColor; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2 { color: var(--deep-red); font-family: 'Playfair Display', serif; font-weight: 600; letter-spacing: -.03em; }
+h1 { margin-bottom: 24px; font-size: clamp(3.4rem, 6vw, 5.5rem); line-height: .98; }
+h1 em, h2 em { color: var(--red); font-weight: 600; }
+.hero-intro { max-width: 410px; color: #80666a; font-size: 15px; line-height: 1.8; }
+.primary-button, .surprise-button { display: inline-flex; align-items: center; gap: 30px; border: 0; cursor: pointer; font: inherit; font-size: 12px; font-weight: 700; text-decoration: none; transition: transform .2s, background .2s; }
+.primary-button { margin-top: 20px; padding: 17px 20px 17px 23px; color: #fff; background: var(--red); letter-spacing: .06em; text-transform: uppercase; }
+.primary-button span { font-size: 18px; line-height: 0; }
+.primary-button:hover, .surprise-button:hover { transform: translateY(-3px); }
+
+.hero-art { position: relative; justify-self: end; width: min(100%, 405px); }
+.photo-frame { position: relative; padding: 11px 11px 50px; background: #fff; box-shadow: 18px 23px 0 rgba(213, 121, 127, .25); transform: rotate(3deg); }
+.photo-frame::before { position: absolute; inset: 0; border: 1px solid rgba(166, 41, 53, .12); content: ''; pointer-events: none; }
+.photo-frame img { display: block; width: 100%; aspect-ratio: .86; object-fit: cover; filter: saturate(.85); }
+.photo-caption { position: absolute; right: 22px; bottom: 14px; left: 22px; display: flex; align-items: center; justify-content: space-between; color: var(--red); font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; }
+.photo-caption strong { font-size: 24px; font-weight: 400; }
+.floating-note { position: absolute; color: var(--red); font-family: 'Playfair Display', serif; font-style: italic; }
+.note-one { top: 11%; left: -38px; padding: 10px 15px; background: var(--blush); font-size: 14px; transform: rotate(-8deg); }
+.note-two { right: -28px; bottom: 10%; font-size: 42px; }
+
+.wish-section { display: grid; grid-template-columns: .9fr 1.1fr; gap: 13%; padding-top: 90px; padding-bottom: 120px; border-top: 1px solid #edd8d3; }
+h2 { margin-bottom: 0; font-size: clamp(2.5rem, 4vw, 4rem); line-height: 1.05; }
+.wish-list { border-top: 1px solid #e8cbc7; }
+.wish-item { display: grid; grid-template-columns: 42px 1fr; gap: 18px; padding: 23px 0; border-bottom: 1px solid #e8cbc7; }
+.wish-item > span { color: var(--red); font-size: 11px; font-weight: 700; letter-spacing: .1em; }
+.wish-item h3 { margin-bottom: 6px; color: var(--deep-red); font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 600; }
+.wish-item p { margin: 0; color: #92787a; font-size: 13px; line-height: 1.6; }
+
+.surprise-section { padding-bottom: 95px; }
+.surprise-card { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 65px 7%; overflow: hidden; background: var(--deep-red); }
+.surprise-card::after { position: absolute; right: 13%; bottom: -90px; width: 210px; height: 210px; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; content: ''; }
+.light { color: var(--rose); }
+.surprise-card h2 { position: relative; z-index: 1; color: #fff7f1; font-size: clamp(2.2rem, 4vw, 3.5rem); }
+.surprise-button { position: relative; z-index: 1; flex-shrink: 0; padding: 16px 20px; color: var(--deep-red); background: var(--blush); }
+.surprise-button span { color: var(--red); font-size: 20px; }
+.hidden-message { position: absolute; z-index: 2; right: 7%; bottom: 15px; max-width: 370px; margin: 0; color: #f8d7d4; font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; line-height: 1.5; opacity: 0; transform: translateY(8px); transition: opacity .4s, transform .4s; }
+.hidden-message.show { opacity: 1; transform: translateY(0); }
+
+footer { display: flex; justify-content: space-between; padding-top: 25px; padding-bottom: 35px; border-top: 1px solid #edd8d3; color: #b39091; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
+footer span:nth-child(2) { color: var(--red); font-size: 20px; line-height: 10px; }
+.reveal { animation: rise-in .8s both; }
+.hero-art { animation-delay: .15s; }
+@keyframes rise-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 700px) {
+	.topbar, main, footer { padding-left: 7vw; padding-right: 7vw; }
+	.topbar { padding-top: 22px; padding-bottom: 22px; }
+	.date-label { display: none; }
+	.hero-section, .wish-section { grid-template-columns: 1fr; gap: 55px; }
+	.hero-section { min-height: auto; padding-top: 65px; padding-bottom: 100px; }
+	.hero-art { justify-self: center; width: min(88%, 360px); }
+	.note-one { left: -22px; }
+	.wish-section { padding-top: 65px; padding-bottom: 80px; }
+	.surprise-card { display: block; padding: 45px 9% 115px; }
+	.surprise-button { margin-top: 30px; }
+	.hidden-message { right: 9%; left: 9%; }
+	footer { gap: 10px; font-size: 8px; }
+}
